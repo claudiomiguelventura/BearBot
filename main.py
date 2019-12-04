@@ -1,5 +1,7 @@
 import tweepy
 
+from time import strftime
+
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler("YMEJuRcmNnUQ06vROKnzmaryg", 
     "7JVktW2cZS9IkOJf03iOu6M14rMEb99EPLtt1UmE0sZOQFEKQg")
@@ -14,5 +16,8 @@ try:
 except:
     print("Error during authentication")
 
-api.update_status("Test tweet from Tweepy Python")
+current_time = strftime("%d/%m/%Y, %H:%M:%S")
+
+api.update_status("Crontab ran. " + current_time)
+
 
