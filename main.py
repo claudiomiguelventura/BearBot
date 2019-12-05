@@ -1,12 +1,10 @@
 import tweepy
 
 from time import strftime
+import keychain
 
-# Authenticate to Twitter
-auth = tweepy.OAuthHandler("YMEJuRcmNnUQ06vROKnzmaryg", 
-    "7JVktW2cZS9IkOJf03iOu6M14rMEb99EPLtt1UmE0sZOQFEKQg")
-auth.set_access_token("1202246952257236992-WDDQ64H4RyGBb16imbPxgfHfVHuKVc", 
-    "8mRczHPtEm1gVGuqgppOK0UCzla9uhHFNrF84PWVhgbwr")
+auth = tweepy.OAuthHandler(keychain.api_key, keychain.api_secret_key)
+auth.set_access_token(keychain.access_token, keychain.access_token_secret)
 
 api = tweepy.API(auth)
 
