@@ -8,14 +8,18 @@ auth.set_access_token(keychain.access_token, keychain.access_token_secret)
 
 api = tweepy.API(auth)
 
+auth_ok = False
+
 try:
     api.verify_credentials()
     print("Authentication OK")
+    auth_ok = True
 except:
     print("Error during authentication")
+    auth_ok = False
 
-current_time = strftime("%d/%m/%Y, %H:%M:%S")
-
-api.update_status("Crontab ran. " + current_time)
+if auth_ok:
+  current_time = strftime("%d/%m/%Y, %H:%M:%S")
+  api.update_status("Crontab ran. " + current_time)
 
 
