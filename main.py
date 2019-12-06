@@ -7,7 +7,7 @@ auth = tweepy.OAuthHandler(keychain.api_key, keychain.api_secret_key)
 auth.set_access_token(keychain.access_token, keychain.access_token_secret)
 
 api = tweepy.API(auth)
-
+#Mostrar ao Bagagem
 auth_ok = False
 
 try:
