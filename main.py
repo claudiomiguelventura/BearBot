@@ -24,7 +24,10 @@ except:
     auth_ok = False
 
 if auth_ok:
-  current_time = strftime("%d/%m/%Y, %H:%M:%S")
-  #api.update_status("Crontab ran. " + current_time)
-  api.update_status(str(sys.argv[1]))
+  if len(sys.argv) > 1:
+    #current_time = strftime("%d/%m/%Y, %H:%M:%S")
+    #api.update_status("Crontab ran. " + current_time)
+    api.update_status(str(sys.argv[1]))
+  else:
+    print("No argument given to tweet.")
 
