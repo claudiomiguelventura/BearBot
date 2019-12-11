@@ -1,7 +1,7 @@
-#Python modules imports
+# Python modules imports
 import tweepy
 
-#Own modules import
+# Own modules import
 import keychain
 
 class BearBot():
