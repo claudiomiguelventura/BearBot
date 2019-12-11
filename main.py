@@ -1,33 +1,5 @@
-import tweepy
+from bearbot import BearBot
 
-from time import strftime
-import keychain
+bot1 = BearBot()
 
-import sys
-
-print 'Number of arguments:', len(sys.argv), 'arguments.'
-print 'Argument List:', str(sys.argv)
-
-auth = tweepy.OAuthHandler(keychain.api_key, keychain.api_secret_key)
-auth.set_access_token(keychain.access_token, keychain.access_token_secret)
-
-api = tweepy.API(auth)
-#Mostrar ao Bagagem
-auth_ok = False
-
-try:
-    api.verify_credentials()
-    print("Authentication OK")
-    auth_ok = True
-except:
-    print("Error during authentication")
-    auth_ok = False
-
-if auth_ok:
-  if len(sys.argv) > 1:
-    #current_time = strftime("%d/%m/%Y, %H:%M:%S")
-    #api.update_status("Crontab ran. " + current_time)
-    api.update_status(str(sys.argv[1]))
-  else:
-    print("No argument given to tweet.")
-
+bot1.tweet("Python has instances! So cool!")
