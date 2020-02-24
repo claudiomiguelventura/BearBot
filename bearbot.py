@@ -6,8 +6,8 @@ import keychain
 
 class BearBot():
   def __init__(self):
-    self.auth = tweepy.OAuthHandler(keychain.api_key, keychain.api_secret_key)
-    self.auth.set_access_token(keychain.access_token, keychain.access_token_secret)
+    self.auth = tweepy.OAuthHandler(keychain.twitter_api_key, keychain.twitter_api_secret_key)
+    self.auth.set_access_token(keychain.twitter_access_token, keychain.twitter_access_token_secret)
     self.api = tweepy.API(self.auth)
     self.auth_ok = False
     try:
