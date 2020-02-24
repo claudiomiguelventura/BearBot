@@ -1,4 +1,4 @@
-api_key=""
-api_secret_key=""
-access_token=""
-access_token_secret=""
+twitter_api_key=""
+twitter_api_secret_key=""
+twitter_access_token=""
+twitter_access_token_secret=""
